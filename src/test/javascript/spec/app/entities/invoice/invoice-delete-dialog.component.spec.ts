@@ -5,8 +5,8 @@ import { Observable, of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
 import { StoreTestModule } from '../../../test.module';
-import { InvoiceDeleteDialogComponent } from 'app/entities/invoice/invoice-delete-dialog.component';
-import { InvoiceService } from 'app/entities/invoice/invoice.service';
+import { InvoiceDeleteDialogComponent } from '../../../../../../main/webapp/app/entities/invoice/invoice-delete-dialog.component';
+import { InvoiceService } from '../../../../../../main/webapp/app/entities/invoice/invoice.service';
 
 describe('Component Tests', () => {
     describe('Invoice Management Delete Component', () => {

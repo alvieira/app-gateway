@@ -5,9 +5,9 @@ import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 
 import { IShipment } from 'app/shared/model/shipment.model';
-import { Principal } from 'app/core';
 
-import { ITEMS_PER_PAGE } from 'app/shared';
+import { ITEMS_PER_PAGE } from '../../shared';
+import { Principal } from '../../core';
 import { ShipmentService } from './shipment.service';
 
 @Component({

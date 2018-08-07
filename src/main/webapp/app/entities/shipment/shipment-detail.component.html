@@ -17,12 +17,6 @@
                 <dd>
                     <span>{{shipment.details}}</span>
                 </dd>
-                <dt><span jhiTranslate="storeApp.shipment.invoice">Invoice</span></dt>
-                <dd>
-                    <div *ngIf="shipment.invoice">
-                        <a [routerLink]="['/invoice', shipment.invoice?.id, 'view']">{{shipment.invoice?.id}}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

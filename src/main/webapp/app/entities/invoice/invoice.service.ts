@@ -5,8 +5,8 @@ import * as moment from 'moment';
 import { DATE_FORMAT } from 'app/shared/constants/input.constants';
 import { map } from 'rxjs/operators';
 
-import { SERVER_API_URL } from 'app/app.constants';
-import { createRequestOption } from 'app/shared';
+import { SERVER_API_URL } from '../../app.constants';
+import { createRequestOption } from '../../shared';
 import { IInvoice } from 'app/shared/model/invoice.model';
 
 type EntityResponseType = HttpResponse<IInvoice>;
@@ -14,7 +14,7 @@ type EntityArrayResponseType = HttpResponse<IInvoice[]>;
 
 @Injectable({ providedIn: 'root' })
 export class InvoiceService {
-    private resourceUrl = SERVER_API_URL + 'invoice/api/invoices';
+    private resourceUrl = SERVER_API_URL + 'api/invoices';
 
     constructor(private http: HttpClient) {}
 

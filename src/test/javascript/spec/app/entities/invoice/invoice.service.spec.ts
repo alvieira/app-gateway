@@ -1,9 +1,9 @@
 /* tslint:disable max-line-length */
 import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { InvoiceService } from 'app/entities/invoice/invoice.service';
-import { Invoice } from 'app/shared/model/invoice.model';
-import { SERVER_API_URL } from 'app/app.constants';
+import { InvoiceService } from '../../../../../../main/webapp/app/entities/invoice/invoice.service';
+import { Invoice } from './../../../../../../main/webapp/app/shared/model/invoice.model';
+import { SERVER_API_URL } from '../../../../../../main/webapp/app/app.constants';
 
 describe('Service Tests', () => {
     describe('Invoice Service', () => {
@@ -26,7 +26,7 @@ describe('Service Tests', () => {
 
                 const req = httpMock.expectOne({ method: 'GET' });
 
-                const resourceUrl = SERVER_API_URL + 'invoice/api/invoices';
+                const resourceUrl = SERVER_API_URL + 'api/invoices';
                 expect(req.request.url).toEqual(resourceUrl + '/' + 123);
             });
 

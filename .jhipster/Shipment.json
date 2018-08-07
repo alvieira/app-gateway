@@ -17,14 +17,7 @@
             "fieldType": "String"
         }
     ],
-    "relationships": [
-        {
-            "relationshipType": "many-to-one",
-            "relationshipName": "invoice",
-            "otherEntityName": "invoice",
-            "otherEntityField": "id"
-        }
-    ],
+    "relationships": [],
     "changelogDate": "20180807141144",
     "entityTableName": "shipment",
     "dto": "no",
@@ -33,6 +26,5 @@
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
     "clientRootFolder": "",
-    "applications": "*",
-    "microserviceName": "invoice"
+    "applications": "*"
 }

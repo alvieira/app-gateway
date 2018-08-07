@@ -4,11 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 
-import { IInvoice } from 'app/shared/model/invoice.model';
-import { Principal } from 'app/core';
 
-import { ITEMS_PER_PAGE } from 'app/shared';
+import { Invoice } from 'app/shared/model/invoice.model';
 import { InvoiceService } from './invoice.service';
+import { ITEMS_PER_PAGE } from '../../shared';
+import { Principal } from '../../core';
 
 @Component({
     selector: 'jhi-invoice',
@@ -16,7 +16,7 @@ import { InvoiceService } from './invoice.service';
 })
 export class InvoiceComponent implements OnInit, OnDestroy {
     currentAccount: any;
-    invoices: IInvoice[];
+    invoices: Invoice[];
     error: any;
     success: any;
     eventSubscriber: Subscription;
@@ -56,7 +56,7 @@ export class InvoiceComponent implements OnInit, OnDestroy {
                 sort: this.sort()
             })
             .subscribe(
-                (res: HttpResponse<IInvoice[]>) => this.paginateInvoices(res.body, res.headers),
+                (res: HttpResponse<Invoice[]>) => this.paginateInvoices(res.body, res.headers),
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
     }
@@ -103,7 +103,7 @@ export class InvoiceComponent implements OnInit, OnDestroy {
         this.eventManager.destroy(this.eventSubscriber);
     }
 
-    trackId(index: number, item: IInvoice) {
+    trackId(index: number, item: Invoice) {
         return item.id;
     }
 
@@ -119,7 +119,7 @@ export class InvoiceComponent implements OnInit, OnDestroy {
         return result;
     }
 
-    private paginateInvoices(data: IInvoice[], headers: HttpHeaders) {
+    private paginateInvoices(data: Invoice[], headers: HttpHeaders) {
         this.links = this.parseLinks.parse(headers.get('link'));
         this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
         this.queryCount = this.totalItems;

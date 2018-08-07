@@ -18,7 +18,6 @@
             <th jhiSortBy="trackingCode"><span jhiTranslate="storeApp.shipment.trackingCode">Tracking Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="date"><span jhiTranslate="storeApp.shipment.date">Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="details"><span jhiTranslate="storeApp.shipment.details">Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="invoice.id"><span jhiTranslate="storeApp.shipment.invoice">Invoice</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -28,11 +27,6 @@
                 <td>{{shipment.trackingCode}}</td>
                 <td>{{shipment.date | date:'medium'}}</td>
                 <td>{{shipment.details}}</td>
-                <td>
-                    <div *ngIf="shipment.invoice">
-                        <a [routerLink]="['../invoice', shipment.invoice?.id, 'view' ]" >{{shipment.invoice?.id}}</a>
-                    </div>
-                </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

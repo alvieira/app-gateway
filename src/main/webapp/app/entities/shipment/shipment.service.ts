@@ -6,7 +6,7 @@ import { DATE_FORMAT } from 'app/shared/constants/input.constants';
 import { map } from 'rxjs/operators';
 
 import { SERVER_API_URL } from 'app/app.constants';
-import { createRequestOption } from 'app/shared';
+import { createRequestOption } from '../../shared';
 import { IShipment } from 'app/shared/model/shipment.model';
 
 type EntityResponseType = HttpResponse<IShipment>;
@@ -14,7 +14,7 @@ type EntityArrayResponseType = HttpResponse<IShipment[]>;
 
 @Injectable({ providedIn: 'root' })
 export class ShipmentService {
-    private resourceUrl = SERVER_API_URL + 'invoice/api/shipments';
+    private resourceUrl = SERVER_API_URL + 'api/shipments';
 
     constructor(private http: HttpClient) {}
 

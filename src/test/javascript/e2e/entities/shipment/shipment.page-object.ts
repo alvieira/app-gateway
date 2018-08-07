@@ -20,7 +20,6 @@ export class ShipmentUpdatePage {
     trackingCodeInput = element(by.id('field_trackingCode'));
     dateInput = element(by.id('field_date'));
     detailsInput = element(by.id('field_details'));
-    invoiceSelect = element(by.id('field_invoice'));
 
     getPageTitle() {
         return this.pageTitle.getAttribute('jhiTranslate');
@@ -48,25 +47,6 @@ export class ShipmentUpdatePage {
 
     getDetailsInput() {
         return this.detailsInput.getAttribute('value');
-    }
-
-    invoiceSelectLastOption(): promise.Promise<void> {
-        return this.invoiceSelect
-            .all(by.tagName('option'))
-            .last()
-            .click();
-    }
-
-    invoiceSelectOption(option): promise.Promise<void> {
-        return this.invoiceSelect.sendKeys(option);
-    }
-
-    getInvoiceSelect(): ElementFinder {
-        return this.invoiceSelect;
-    }
-
-    getInvoiceSelectedOption() {
-        return this.invoiceSelect.element(by.css('option:checked')).getText();
     }
 
     save(): promise.Promise<void> {

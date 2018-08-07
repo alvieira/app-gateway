@@ -4,12 +4,9 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import * as moment from 'moment';
 import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
-import { JhiAlertService } from 'ng-jhipster';
 
 import { IShipment } from 'app/shared/model/shipment.model';
 import { ShipmentService } from './shipment.service';
-import { IInvoice } from 'app/shared/model/invoice/invoice.model';
-import { InvoiceService } from 'app/entities/invoice/invoice';
 
 @Component({
     selector: 'jhi-shipment-update',
@@ -18,28 +15,15 @@ import { InvoiceService } from 'app/entities/invoice/invoice';
 export class ShipmentUpdateComponent implements OnInit {
     private _shipment: IShipment;
     isSaving: boolean;
-
-    invoices: IInvoice[];
     date: string;
 
-    constructor(
-        private jhiAlertService: JhiAlertService,
-        private shipmentService: ShipmentService,
-        private invoiceService: InvoiceService,
-        private activatedRoute: ActivatedRoute
-    ) {}
+    constructor(private shipmentService: ShipmentService, private activatedRoute: ActivatedRoute) {}
 
     ngOnInit() {
         this.isSaving = false;
         this.activatedRoute.data.subscribe(({ shipment }) => {
             this.shipment = shipment;
         });
-        this.invoiceService.query().subscribe(
-            (res: HttpResponse<IInvoice[]>) => {
-                this.invoices = res.body;
-            },
-            (res: HttpErrorResponse) => this.onError(res.message)
-        );
     }
 
     previousState() {
@@ -67,14 +51,6 @@ export class ShipmentUpdateComponent implements OnInit {
 
     private onSaveError() {
         this.isSaving = false;
-    }
-
-    private onError(errorMessage: string) {
-        this.jhiAlertService.error(errorMessage, null, null);
-    }
-
-    trackInvoiceById(index: number, item: IInvoice) {
-        return item.id;
     }
     get shipment() {
         return this._shipment;

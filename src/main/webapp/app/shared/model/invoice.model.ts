@@ -1,5 +1,4 @@
 import { Moment } from 'moment';
-import { IShipment } from 'app/shared/model/shipment.model';
 
 export const enum InvoiceStatus {
     PAID = 'PAID',
@@ -21,7 +20,7 @@ export interface IInvoice {
     paymentMethod?: PaymentMethod;
     paymentDate?: Moment;
     paymentAmount?: number;
-    shipments?: IShipment[];
+    code?: string;
 }
 
 export class Invoice implements IInvoice {
@@ -33,6 +32,6 @@ export class Invoice implements IInvoice {
         public paymentMethod?: PaymentMethod,
         public paymentDate?: Moment,
         public paymentAmount?: number,
-        public shipments?: IShipment[]
+        public code?: string
     ) {}
 }

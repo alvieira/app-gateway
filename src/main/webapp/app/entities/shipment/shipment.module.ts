@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { StoreSharedModule } from 'app/shared';
+import { StoreSharedModule } from '../../shared';
 import {
     ShipmentComponent,
     ShipmentDetailComponent,

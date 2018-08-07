@@ -4,8 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
 import { StoreTestModule } from '../../../test.module';
-import { InvoiceDetailComponent } from 'app/entities/invoice/invoice-detail.component';
-import { Invoice } from 'app/shared/model/invoice.model';
+import { InvoiceDetailComponent } from '../../../../../../main/webapp/app/entities/invoice/invoice-detail.component';
+import { InvoiceService } from '../../../../../../main/webapp/app/entities/invoice/invoice.service';
+import { Invoice } from './../../../../../../main/webapp/app/shared/model/invoice.model';
 
 describe('Component Tests', () => {
     describe('Invoice Management Detail Component', () => {

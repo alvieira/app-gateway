@@ -36,7 +36,6 @@ describe('Shipment e2e test', () => {
         expect(shipmentUpdatePage.getDateInput()).toContain('2001-01-01T02:30');
         shipmentUpdatePage.setDetailsInput('details');
         expect(shipmentUpdatePage.getDetailsInput()).toMatch('details');
-        shipmentUpdatePage.invoiceSelectLastOption();
         shipmentUpdatePage.save();
         expect(shipmentUpdatePage.getSaveButton().isPresent()).toBeFalsy();
     });

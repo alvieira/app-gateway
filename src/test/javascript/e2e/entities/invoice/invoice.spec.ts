@@ -40,6 +40,8 @@ describe('Invoice e2e test', () => {
         expect(invoiceUpdatePage.getPaymentDateInput()).toContain('2001-01-01T02:30');
         invoiceUpdatePage.setPaymentAmountInput('5');
         expect(invoiceUpdatePage.getPaymentAmountInput()).toMatch('5');
+        invoiceUpdatePage.setCodeInput('code');
+        expect(invoiceUpdatePage.getCodeInput()).toMatch('code');
         invoiceUpdatePage.save();
         expect(invoiceUpdatePage.getSaveButton().isPresent()).toBeFalsy();
     });

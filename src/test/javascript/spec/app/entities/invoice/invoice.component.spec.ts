@@ -5,9 +5,9 @@ import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, Data } from '@angular/router';
 
 import { StoreTestModule } from '../../../test.module';
-import { InvoiceComponent } from 'app/entities/invoice/invoice.component';
-import { InvoiceService } from 'app/entities/invoice/invoice.service';
-import { Invoice } from 'app/shared/model/invoice.model';
+import { InvoiceComponent } from '../../../../../../main/webapp/app/entities/invoice/invoice.component';
+import { InvoiceService } from '../../../../../../main/webapp/app/entities/invoice/invoice.service';
+import { Invoice } from './../../../../../../main/webapp/app/shared/model/invoice.model';
 
 describe('Component Tests', () => {
     describe('Invoice Management Component', () => {

@@ -5,6 +5,7 @@ import { JhiPaginationUtil, JhiResolvePagingParams } from 'ng-jhipster';
 import { UserRouteAccessService } from 'app/core';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 import { Invoice } from 'app/shared/model/invoice.model';
 import { InvoiceService } from './invoice.service';
 import { InvoiceComponent } from './invoice.component';
