@@ -1,9 +1,10 @@
 /* tslint:disable max-line-length */
 import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { NotificationService } from '../../../../../../main/webapp/app/entities/notification/notification.service';
-import { Notification } from './../../../../../../main/webapp/app/shared/model/notification.model';
-import { SERVER_API_URL } from '../../../../../../main/webapp/app/app.constants';
+
+import { NotificationService } from 'app/entities/notification';
+import { SERVER_API_URL } from 'app/app.constants';
+import { Notification } from 'app/shared/model/notification.model';
 
 describe('Service Tests', () => {
     describe('Notification Service', () => {

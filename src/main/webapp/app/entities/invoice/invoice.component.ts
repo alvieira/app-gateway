@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 
-
 import { Invoice } from 'app/shared/model/invoice.model';
 import { InvoiceService } from './invoice.service';
 import { ITEMS_PER_PAGE } from '../../shared';

@@ -1,9 +1,10 @@
 /* tslint:disable max-line-length */
 import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { ProductOrderService } from '../../../../../../main/webapp/app/entities/product-order/product-order.service';
-import { ProductOrder } from './../../../../../../main/webapp/app/shared/model/product-order.model';
-import { SERVER_API_URL } from '../../../../../../main/webapp/app/app.constants';
+
+import { ProductOrderService } from 'app/entities/product-order';
+import { ProductOrder } from 'app/shared/model/product-order.model';
+import { SERVER_API_URL } from 'app/app.constants';
 
 describe('Service Tests', () => {
     describe('ProductOrder Service', () => {
